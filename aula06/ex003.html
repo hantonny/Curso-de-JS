@@ -14,17 +14,18 @@
         }
         h1 {
             font-weight: 900;
+            color: yellow;
         }
     </style>
 </head>
-
 <body>
     <h1>Olá, Mundo!</h1>
     <p>Já me livrei da maldição.</p>
     <script>
-        window.alert('Olá, Mundo!')
-        window.confirm('Está gostando de Javascript?')
-        window.prompt('Qual é seu nome?')
+        var n1 = window.prompt('Digite um número: ')
+        var n2 = window.prompt('Digite outro número: ')
+        var s = Number(n1)+ Number(n2)
+        window.alert(`A soma entre ${n1} e ${n2} é ${s}`)
     </script>
 </body>
 </html>
