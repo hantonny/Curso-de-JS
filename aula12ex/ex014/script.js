@@ -5,7 +5,7 @@ function carregar(){
     var hora = data.getHours()
     msg.innerHTML = `Agora são ${hora} horas`
 
-    if(hora >= 0 && hora < 12) {
+    if(hora >= 5 && hora < 12) {
         //BOM DIA!
         img.src = 'manha.jpg'
         document.body.style.background = '#e2cd9f'
@@ -13,9 +13,13 @@ function carregar(){
         //BOA TARDE!
         img.src = 'tarde.jpg'
         document.body.style.background = '#b9846f'
-    } else {
+    } else if (hora > 18 && hora >= 0) {
         //BOA NOITE!
         img.src = 'noite.jpg'
         document.body.style.background = '#515154'
+    } else {
+        //BOA MADRUGADA!
+        img.src = 'madrugada.jpg'
+        document.body.style.background = '#212121'
     }
 }
