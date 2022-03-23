@@ -20,6 +20,6 @@ function carregar(){
     } else {
         //BOA MADRUGADA!
         img.src = 'madrugada.jpg'
-        document.body.style.background = '#212121'
+        document.body.style.background = '#100000'
     }
 }
