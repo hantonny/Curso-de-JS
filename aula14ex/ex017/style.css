@@ -17,6 +17,14 @@ section {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
 }
 
+select {
+    margin-top: 1rem;
+}
+
+label{
+    font-size: 1.4rem;
+}
+
 footer {
     color: white;
     text-align: center;

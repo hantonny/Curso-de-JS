@@ -16,7 +16,7 @@ function contar() {
 
     res.innerHTML = ''
     res.style.fontSize = '1.2rem';
-    if(inicio !== "" && fim !== "") {
+    if(inicio && fim) {
         if(p === 0) {
             alert('Passo inválido! Considerando PASSO 1')
             p = 1
