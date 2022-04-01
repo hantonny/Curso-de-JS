@@ -1,16 +1,18 @@
 function mostrarTabuada() {
-    var numero = document.getElementById('number').value;
+    var num = document.getElementById('number').value;
     
-    const select = document.getElementById('tabuada');
+    const tab = document.getElementById('tabuada');
 
-    if(numero) {
-        select.innerHTML = ''
+    if(num) {
+        tab.innerHTML = ''
         for(var i = 0; i <= 10; i++) {
-            var res = numero * i;
-            select.options[select.options.length] = new Option(`${numero} X ${i} = ${res}`);
+            let item = document.createElement('option')
+            item.text = `${num} X ${i} = ${num * i}`
+            item.value = `tab${i}`
+            tab.appendChild(item)
         }
         
-        select.size = select.length;
+        tab.size = tab.length;
     } else {
         alert('Por favor, digite um número!')
     }
