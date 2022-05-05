@@ -1,38 +1,38 @@
 let numbers = [];
 
+let number = document.getElementById('number');
+
+let tab = document.getElementById('numeros');
+
+let res = document.getElementById('res');
+
 function addNumber() {
 
-    let number = document.getElementById('number').value;
-
-    if(number > 100 || number === ''){
+    if(Number(number.value) < 1 || Number(number.value) > 100 || Number(number.value) === '') {
         alert('Valor inválido ou já encontrado na lista.')
     } else {
-        let pos = numbers.indexOf(number)
+        let pos = numbers.indexOf(Number(number.value))
 
         if (pos == -1) {
-            numbers.push(number);
-            res.innerHTML = ''
-            const tab = document.getElementById('numeros');
-        
-            tab.innerHTML = ''
-        
-            for(var i = 0; i < numbers.length; i++) {
-                let item = document.createElement('option')
-                item.text = `Valor ${numbers[i]} adicionado.`
-                item.value = `${numbers[i]}`
-                tab.appendChild(item)
-            }
+            numbers.push(Number(number.value));
+            let item = document.createElement('option')
+            item.text = `Valor ${Number(number.value)} adicionado.`
+            item.value = `${Number(number.value)}`
+            tab.appendChild(item)
+            res.innerHTML = ''  
+            
         } else {
             alert('Valor inválido ou já encontrado na lista.')
         }
     }   
-
+    number.value = ''
+    number.focus()
     
 }
 
 function AnalisarNumeros() {
 
-    if(numeros.length == 0){
+    if(numbers.length == 0){
         alert('Adicione valores antes de finalizar!')
     } else {
         res.innerHTML = ''
@@ -48,7 +48,7 @@ function AnalisarNumeros() {
         let soma = 0;
     
         for(let i = 0; i < numbers.length; i++) {
-            soma = soma + Number(numbers[i]);
+            soma += Number(numbers[i]);
         }
     
         res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
